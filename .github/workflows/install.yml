@@ -1,0 +1,25 @@
+name: Deploy Documentation to Github Pages
+
+on:
+  push:
+    branches:
+      - github-actions
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+          submodules: recursive
+          persist-credentials: false
+
+    - name: Install
+      env: 
+        PREFIX: "/usr/local"
+      run: |   
+        make build
+        make install
+
+      
