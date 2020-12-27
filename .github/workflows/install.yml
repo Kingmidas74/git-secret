@@ -19,7 +19,7 @@ jobs:
       env: 
         PREFIX: "/usr/local"
       run: |   
-        make build
-        make install
+        sudo make build
+        sudo make install
 
       
